@@ -2,56 +2,61 @@
 <div ng-controller="HomeController as vm">
 	<h1 style="text-align:center;">{{vm.title}}</h1>
 	<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			 <a id="modal-964544" href="#modal-container-964544" role="button" class="btn" data-toggle="modal">Log-In</a>
 
-			<div class="modal fade" id="modal-container-964544" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
+		<div id='logIn'>
 
-							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-								×
-							</button>
-							<h4 class="modal-title" id="myModalLabel">
-								Modal title
-							</h4>
-						</div>
-						<div class="modal-body">
-							...
-						</div>
-						<div class="modal-footer">
+			<button ng-hide='vm.LogBtn' class='btn btn-primary btn-sm' type="button" ng-click='vm.LOGIN()'>Log-In</button>
 
-							<button type="button" class="btn btn-default" data-dismiss="modal">
-								Close
-							</button>
-							<button type="button" class="btn btn-primary">
-								Save changes
-							</button>
-						</div>
-					</div>
+			<div ng-show="vm.showme" >
 
+				<div>
+					<button ng-hide='vm.NewUser' ng-click='vm.newUserLogIn()'>New User</button>
+					<form ng-hide='vm.NewLogin'>
+						<label>Email</label>
+						<input type="text" ng-model='nav.user.email'>
+						<label>Password</label>
+						<input type="text" ng-model='nav.user.password'>
+						<button ng-click='vm.LogIn()'>Log In</button>
+					</form>
 				</div>
 
-			</div>
+				<div >
+					<button ng-hide='vm.ReturnUser' ng-click='vm.rtnUserLogIn()'>Returning User</button>
+					<form ng-hide='vm.RtnLogin'>
+						<label>Email</label>
+						<input type="text" ng-model='nav.user.email'>
+						<label>Password</label>
+						<input type="text" ng-model='nav.user.password'>
+						<button ng-click='vm.LogIn()'>Log In</button>
+					</form>
+				</div>
+					<a ng-click='vm.CancelLogin()'>Cancel</a>
+				</div>
 
+		</div>
+
+
+
+
+
+	<div class="row">
+		<div class="col-md-12">
 			<h3 style="text-align:center;padding:20px">
 				Event planning for the 21st century!
 			</h3>
 		</div>
 	</div>
-	<div style="text-align:center;margin-top:20px;"class="row">
+	<div  style="text-align:center;margin-top:20px;"class="row">
 		<div style="margin-bottom:15px;"class="col-md-4">
-			<a ui-sref='Profile' style="width:300px;height:200px;"><p>Profile</p><img height='225' src='https://dhrm.utah.gov/wp-content/themes/dhrm/img/icon-employeebadge-white-large.png'></a>
+			<a ui-sref='Profile' style="width:300px;height:200px;"><h3>Profile</h3><img height='225' src='https://dhrm.utah.gov/wp-content/themes/dhrm/img/icon-employeebadge-white-large.png'></a>
 		</div>
 		<!-- http://simpleicon.com/wp-content/uploads/Calendar-Time.png -->
 		<div style="margin-bottom:15px;"class="col-md-4">
-			<a ui-sref='EventPage' style="width:300px;height:200px;"><p>Event Calendar</p><img height='225' src='http://orpheumbell.com/wp-content/uploads/2010/04/icon-calendar-white.png'></a>
+			<a ui-sref='EventPage' style="width:300px;height:200px;"><h3>Event Calendar</h3><img height='225' src='http://orpheumbell.com/wp-content/uploads/2010/04/icon-calendar-white.png'></a>
 		</div>
 		<!-- http://alzlive.com/wp-content/themes/alz-live/images/icons/icon-calendar-plus_circle.png -->
 		<div class="col-md-4">
-			<a ui-sref='EventHome' style="width:300px;height:200px"><p>Create/Run Event</p><img height='225' src='http://alzlive.com/wp-content/themes/alz-live/images/icons/icon-calendar-plus_circle.png'></a>
+			<a ui-sref='EventHome' style="width:300px;height:200px"><h3>Create/Run Event</h3><img height='225' src='http://alzlive.com/wp-content/themes/alz-live/images/icons/icon-calendar-plus_circle.png'></a>
 		</div>
 	</div>
 </div>
