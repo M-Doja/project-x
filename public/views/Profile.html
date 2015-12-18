@@ -1,0 +1,93 @@
+<!-- Person profile page -->
+
+
+<div ng-controller='ProfileController as vm'>
+  <div style="text-align:center;margin-bottom:15px;" >
+  <button ui-sref="Upgrade" style="text-align:center;width:250px;"class="btn btn-xlg btn-info">Upgrade to Pro</button></div>
+  <div class="container-fluid">
+  	<div class="row" style="padding-right:5px;margin:0 auto;">
+
+      <!-- AVITAR -->
+  		<div style="margin-bottom:15px;text-align:center"class="col-md-3">
+        <button ui-sref='Home' style="margin-right:15px;margin-bottom:10px;"class="btn btn-sm btn-primary">Home</button>
+        <button ui-sref='EventPage' style="margin-bottom:10px;"class="btn btn-sm btn-primary">Event</button><br>
+  			<img style="margin-bottom:20px;"alt="Bootstrap Image Preview" src="http://lorempixel.com/270/270/" /><br>
+  			<button style="margin-left:15px;"type="button" class="btn btn-xlg btn-danger">
+  				Edit Profile
+  			</button>
+  			<button style="margin-left:10px;"type="button" class="btn btn-xlg btn-warning">
+  				Store
+  			</button>
+  		</div>
+
+      <!-- PERSONAL PIC -->
+      <div class="well container col-md-9">
+  		<div style="margin-bottom:15px;text-align:center;padding:5px;"class="col-md-2">
+  			<img style="margin-bottom:10px;" alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" /><br>
+        <img src="http://www.fancyicons.com/download/?id=3343&t=png&s=256" height="20" width="20">
+        <img src="http://www.fancyicons.com/download/?id=3343&t=png&s=256" height="20" width="20">
+        <img src="http://www.fancyicons.com/download/?id=3343&t=png&s=256" height="20" width="20">
+        <img src="http://www.fancyicons.com/download/?id=3343&t=png&s=256" height="20" width="20">
+        <img src="http://www.fancyicons.com/download/?id=3343&t=png&s=256" height="20" width="20"><br><br>
+  			<button style="margin-left:10px;"type="button" class="btn btn-xs btn-primary">
+  				Send Message
+  			</button><br>
+  			<button style="margin-left:10px;"type="button" class="btn btn-xs btn-info">
+  				Add to Friends
+  			</button>
+  		</div>
+
+      <!-- BIO INFO -->
+  		<div style="margin-left:15px;text-align:center;"class="col-md-7">
+        <div style="display:block;">
+          <button class="btn btn-primary" ng-click='isbio = !isbio'>Bio</button>
+          <button class="btn btn-primary" ng-click='isIns = !isIns'>Instruments</button>
+          <button class="btn btn-primary">Events</button>
+          <button class="btn btn-primary">Stats</button>
+          <button class="btn btn-primary">Achievements</button>
+        </div>
+        <div ng-show='isbio'>
+          <h5 style="text-align:center"><b>Biography</b></h5>
+    			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
+    				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+    			</p>
+        </div>
+
+        <div ng-show='isIns'>
+          <h5 style="text-align:center"><b>Instruments</b></h5>
+    			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
+    				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+    			</p>
+        </div>
+
+
+
+
+  		</div>
+    </div>
+  	</div>
+
+    <!-- TABS TO BE SCROLLED THRU -->
+    <div style="height:100px;"class="col-md-12 well">
+      <div class="row">
+		<div class="col-md-12">
+			<ul class="nav nav-tabs">
+				<li class="active">
+					<a ui-sref="Profile">Pics</a>
+				</li>
+				<li>
+					<a ui-sref="Profile">Video</a>
+				</li>
+				<li >
+					<a ui-sref="Profile">Audio</a>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+    </div>
+
+
+
+
+</div> <!-- End of controller -->
