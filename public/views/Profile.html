@@ -3,8 +3,9 @@
 
 <div ng-controller='ProfileController as vm'>
   <div style="text-align:center;margin-bottom:15px;" >
-  <button ui-sref="Upgrade" style="text-align:center;width:250px;"class="btn btn-xlg btn-info">Upgrade to Pro</button></div>
-  <div class="container-fluid">
+  <button ui-sref="Upgrade" style="text-align:center;width:250px;margin-top:5px;"class="btn btn-xlg btn-info">Upgrade to Pro</button></div>
+
+  <div style=""class="container-fluid">
   	<div class="row" style="padding-right:5px;margin:0 auto;">
 
       <!-- AVITAR -->
@@ -40,27 +41,46 @@
       <!-- BIO INFO -->
   		<div style="margin-left:15px;text-align:center;"class="col-md-7">
         <div style="display:block;">
-          <button class="btn btn-primary" ng-click='isbio = !isbio'>Bio</button>
-          <button class="btn btn-primary" ng-click='isIns = !isIns'>Instruments</button>
-          <button class="btn btn-primary">Events</button>
-          <button class="btn btn-primary">Stats</button>
-          <button class="btn btn-primary">Achievements</button>
+          <button class="btn btn-primary" ng-click='vm.showBio()'>Bio</button>
+          <button class="btn btn-primary" ng-click='vm.showIns()'>Instruments</button>
+          <button class="btn btn-primary" ng-click='vm.showEve()'>Events</button>
+          <button class="btn btn-primary" ng-click='vm.showStat()'>Stats</button>
+          <button class="btn btn-primary" ng-click='vm.showAch()'>Achievements</button>
         </div>
-        <div ng-show='isbio'>
+        <div ng-hide='vm.isBio'>
           <h5 style="text-align:center"><b>Biography</b></h5>
     			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
     				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
     			</p>
         </div>
 
-        <div ng-show='isIns'>
+        <div ng-hide='vm.isIns'>
           <h5 style="text-align:center"><b>Instruments</b></h5>
     			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
     				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
     			</p>
         </div>
 
+        <div ng-hide='vm.isEve'>
+          <h5 style="text-align:center"><b>Events</b></h5>
+    			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
+    				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+    			</p>
+        </div>
 
+        <div ng-hide='vm.isStat'>
+          <h5 style="text-align:center"><b>Stats</b></h5>
+    			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
+    				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+    			</p>
+        </div>
+
+        <div ng-hide='vm.isAch'>
+          <h5 style="text-align:center"><b>Achievements</b></h5>
+    			<p style="border: solid white 2px;padding:20px;margin:0 auto;">
+    				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
+    			</p>
+        </div>
 
 
   		</div>
@@ -68,7 +88,7 @@
   	</div>
 
     <!-- TABS TO BE SCROLLED THRU -->
-    <div style="height:100px;"class="col-md-12 well">
+    <div style="height:100px;margin-bottom:30px;"class="col-md-12 well">
       <div class="row">
 		<div class="col-md-12">
 			<ul class="nav nav-tabs">
@@ -85,9 +105,18 @@
 			</ul>
 		</div>
 	</div>
+  </div> <!-- End of controller -->
+
+  <div ng-controller="CarouselDemoCtrl">
+    <div style="height: 305px">
+      <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
+        <uib-slide ng-repeat="slide in slides" active="slide.active">
+          <img ng-src="{{slide.image}}" style="margin:auto;">
+          <div class="carousel-caption">
+            <h4>Slide {{$index}}</h4>
+            <p>{{slide.text}}</p>
+          </div>
+        </uib-slide>
+      </uib-carousel>
     </div>
-
-
-
-
-</div> <!-- End of controller -->
+    

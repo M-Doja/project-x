@@ -6,13 +6,14 @@
 
 	function HomeController() {
 		var vm = this;
-		vm.title = 'Welcome to Shaker!';
+		vm.title = 'Welcome to Showtime!';
 		vm.showme = false;
 		vm.LogBtn = false;
 		vm.NewLogin = true;
 		vm.RtnLogin = true;
 		vm.NewUser = false;
 		vm.ReturnUser = false;
+		vm.Cancel = false;
 
 			// LOGIN CONTROLS
 		vm.LOGIN = function() {
@@ -20,6 +21,7 @@
 			vm.LogBtn = true;
 			vm.RtnLogin = true;
 			vm.NewLogin = true;
+			vm.Cancel = true;
 		}
 		vm.CancelLogin = function() {
 			vm.showme = false;
@@ -31,11 +33,13 @@
 			vm.NewLogin = false;
 			vm.ReturnUser = true;
 			vm.NewUser = true;
+			vm.Cancel = false;
 		}
 		vm.rtnUserLogIn = function() {
 			vm.RtnLogin = false;
 			vm.NewUser = true;
 			vm.ReturnUser = true;
+			vm.Cancel = false;
 		}
 		vm.registerUser = function() {
 

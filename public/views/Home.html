@@ -1,51 +1,76 @@
 <!-- This will display the the home state to decide where to navigate to -->
-<div ng-controller="HomeController as vm">
-	<h1 style="text-align:center;">{{vm.title}}</h1>
+<div ng-controller="HomeController as nav">
+	<button ng-hide='nav.LogBtn' style="margin:15px;"class='btn btn-danger btn-sm' type="button" ng-click='nav.LOGIN()'>Log-In</button>
+	<h1 style="text-align:center;margin-top:.5px;">{{nav.title}}</h1>
+	<div class="row">
+		<div class="col-md-12">
+			<h4 style="text-align:center;padding-bottom:20px">
+				Event planning for the 21st century!
+			</h4>
+		</div>
+	</div>
 	<div class="container-fluid">
-
 		<div id='logIn'>
 
-			<button ng-hide='vm.LogBtn' class='btn btn-primary btn-sm' type="button" ng-click='vm.LOGIN()'>Log-In</button>
 
-			<div ng-show="vm.showme" >
+
+			<div ng-show="nav.showme" >
 
 				<div>
-					<button ng-hide='vm.NewUser' ng-click='vm.newUserLogIn()'>New User</button>
-					<form ng-hide='vm.NewLogin'>
-						<label>Email</label>
-						<input type="text" ng-model='nav.user.email'>
-						<label>Password</label>
-						<input type="text" ng-model='nav.user.password'>
-						<button ng-click='vm.LogIn()'>Log In</button>
+					<button ng-hide='nav.NewUser' ng-click='nav.newUserLogIn()'>New User</button>
+
+					<form ng-hide='nav.NewLogin'>
+						<md-input-container>
+			        <label>Name</label>
+			        <input ng-model="nav.user.name">
+			      </md-input-container>
+			      <md-input-container>
+			        <label>Last Name</label>
+			        <input ng-model="nav.user.lastName">
+			      </md-input-container>
+			      <md-input-container>
+			        <label>User Name</label>
+			        <input ng-model="nav.user.userName">
+			      </md-input-container>
+			      <md-input-container>
+			        <label>Email</label>
+			        <input type="email" ng-model="nav.user.email">
+			      </md-input-container>
+			      <md-input-container>
+			        <label>Password</label>
+			        <input type="password" ng-model="nav.user.password">
+			      </md-input-container><br>
+						<md-container>
+			        <md-button type="button" ng-click="">Join</md-button>
+							<md-button type="button" ng-click="nav.CancelLogin()">Cancel</md-button>
+			      </md-container>
 					</form>
+
 				</div>
 
 				<div >
-					<button ng-hide='vm.ReturnUser' ng-click='vm.rtnUserLogIn()'>Returning User</button>
-					<form ng-hide='vm.RtnLogin'>
-						<label>Email</label>
-						<input type="text" ng-model='nav.user.email'>
-						<label>Password</label>
-						<input type="text" ng-model='nav.user.password'>
-						<button ng-click='vm.LogIn()'>Log In</button>
+					<button ng-hide='nav.ReturnUser' ng-click='nav.rtnUserLogIn()'>Returning User</button>
+
+					<form ng-hide='nav.RtnLogin'>
+						<md-input-container>
+			        <label>Email</label>
+			        <input type="email" ng-model="nav.user.email">
+			      </md-input-container>
+			      <md-input-container>
+			        <label>Password</label>
+			        <input type="password" ng-model="nav.user.password">
+			      </md-input-container><br>
+						<md-container>
+			        <md-button type="button" ng-click="nav.LogIn()">Join</md-button>
+							<md-button type="button" ng-click="nav.CancelLogin()">Cancel</md-button>
+			      </md-container>
 					</form>
-				</div>
-					<a ng-click='vm.CancelLogin()'>Cancel</a>
-				</div>
 
+				</div>
+					<a ng-show='nav.Cancel' ng-click='nav.CancelLogin()'>Cancel</a>
+				</div>
 		</div>
 
-
-
-
-
-	<div class="row">
-		<div class="col-md-12">
-			<h3 style="text-align:center;padding:20px">
-				Event planning for the 21st century!
-			</h3>
-		</div>
-	</div>
 	<div  style="text-align:center;margin-top:20px;"class="row">
 		<div style="margin-bottom:15px;"class="col-md-4">
 			<a ui-sref='Profile' style="width:300px;height:200px;"><h3>Profile</h3><img height='225' src='https://dhrm.utah.gov/wp-content/themes/dhrm/img/icon-employeebadge-white-large.png'></a>

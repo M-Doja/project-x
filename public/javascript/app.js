@@ -1,6 +1,6 @@
 (function() {
 	'use strict';
-	angular.module('app', ['ui.router', 'slickCarousel'])
+	angular.module('app', ['ui.bootstrap','ui.router',  'ngAnimate', 'ngMaterial'])
 	.config(Config);
 	Config.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function Config($stateProvider, $urlRouterProvider) {
