@@ -2,7 +2,7 @@
 	'use strict';
 	angular.module('app')
 	.controller('ProfileController', ProfileController);
-	function ProfileController($animate) {
+	function ProfileController($animate, UserFactory) {
 		var vm = this;
 		vm.title = 'Welcome to Shaker!';
     console.log('ProfileController in effect');
@@ -12,21 +12,8 @@
 		vm.isStat = true;
 		vm.isAch = true;
 		$animate.enabled(true);
+		vm.status = UserFactory.status
 
-		// vm.myInterval = 5000;
-	  // vm.noWrapSlides = false;
-	  // vm.slides = [];
-	  // vm.addSlide = function() {
-	  //   vm.newWidth = 600 + slides.length + 1;
-	  //   vm.slides.push({
-	  //     image: '//placekitten.com/' + vm.newWidth + '/300',
-	  //     text: ['More','Extra','Lots of','Surplus'][vm.slides.length % 4] + ' ' +
-	  //       ['Cats', 'Kittys', 'Felines', 'Cutes'][vm.slides.length % 4]
-	  //   });
-	  // };
-	  // for (var i=0; i<4; i++) {
-	  //   vm.addSlide();
-	  // }
 
 		vm.showBio = function() {
 			vm.isBio = false;
@@ -63,6 +50,7 @@
 			vm.isStat = true;
 			vm.isAch = false;
 		}
+		
 
 
 	}

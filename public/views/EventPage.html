@@ -1,6 +1,10 @@
-<!-- Will list a calendar with event dates and google geolocation -->
-<h1>EventPage</h1>
-<div ng-controller=''>
+<div ng-controller='EventController as vm'>
+  <h1>EventPage</h1>
+  <a style='color:red;' ui-sref="Events">Events Home</a>
+  <div ng-repeat='e in vm.events track by $index'>
+    <h3>{{e.textBody}}</h3>
+  </div>
+
 
 
 

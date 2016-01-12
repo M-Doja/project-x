@@ -3,8 +3,6 @@
 <head>
 	<title>Shaker</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="slick-carousel/slick/slick.css">
-	<link rel="stylesheet" href="slick-carousel/slick/slick-theme.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="javascript/ui-bootstrap-custom-0.14.3-csp.css">
 	<link rel="stylesheet" type="text/css" href="angular-material/angular-material.min.css">
@@ -12,6 +10,15 @@
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
+	<div id="nav" style="text-align:center;font-size:18px;color:white;">
+		<a ui-sref="Home">Home</a>
+		<a ui-sref="Events">All Events</a>
+		<a ui-sref="EventPage">Single Event</a>
+		<a ui-sref="EventHome">Run Event</a>
+		<a ui-sref="Profile">Profile</a>
+		<a ui-sref="AddEvent">Add Events</a>
+	</div>
+
 	<ui-view></ui-view>
 	<!-- Ext Libs -->
 	<script src="jquery/dist/jquery.min.js"></script>
@@ -23,18 +30,20 @@
 	<script src="angular-material/angular-material.min.js"></script>
 
 
-  <script src="javascript/ui-bootstrap-custom-0.14.3.min.js"></script>
-	<script src="javascript/ui-bootstrap-custom-tpls-0.14.3.min.js"></script>
+  <!-- <script src="javascript/ui-bootstrap-custom-0.14.3.min.js"></script>
+	<script src="javascript/ui-bootstrap-custom-tpls-0.14.3.min.js"></script> -->
 	<script src="angular-modal-service/dst/angular-modal-service.min.js"></script>
 	<!-- Global Src -->
 	<script src="/javascript/app.js"></script>
 	<!-- Factories -->
 	<script src="/javascript/services/HomeFactory.js"></script>
+	<script src="/javascript/services/UserFactory.js"></script>
 	<!-- Controllers -->
+	<script src="/javascript/controllers/ExitController.js"></script>
 	<script src="/javascript/controllers/HomeController.js"></script>
 	<script src="/javascript/controllers/EventController.js"></script>
 	<script src="/javascript/controllers/ProfileController.js"></script>
 	<script src="/javascript/controllers/UpgradeController.js"></script>
-	<script src="/javascript/controllers/CarouselDemoCtrl.js"></script>
+	<!-- <script src="/javascript/controllers/CarouselDemoCtrl.js"></script> -->
 </body>
 </html>

@@ -4,11 +4,11 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
 var mongoose = require("mongoose");
-var passport = require("passport");
+mongoose.connect('mongodb://localhost/shaker');
+
 require('./models/User');
 require('./models/Event');
 require('./config/passport');
-mongoose.connect('mongodb://localhost/shaker');
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -26,7 +26,7 @@ app.set('view options', {
 //middleware that allows for us to parse JSON and UTF-8 from the body of an HTTP request
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-app.use(passport.initialize());
+// app.use(passport.initialize());
 var userRoutes = require('./routes/UserRouter');
 var eventRoutes = require('./routes/EventRouter');
 

@@ -1,0 +1,102 @@
+<!-- Will list a calendar with event dates and google geolocation -->
+<h1>AddEventPage</h1>
+<div ng-controller='EventController as vm'>
+  <button class="btn btn-lg btn-default" ui-sref='Home' style="margin-top:10px;margin-left:15px;width:200px">Home</button>
+<!-- START FORM -->
+  <div class="container-fluid">
+  	<div class="row">
+  		<div class="col-md-12">
+  			<h3 class="text-center">
+  				Add a Show Time Event
+  			</h3>
+  		</div>
+  	</div>
+  	<div class="row">
+  		<div class="col-md-12">
+  			<div class="row">
+  				<div class="col-md-4">
+
+  					<button type="button" class="btn btn-default btn-block">
+  						All Events
+  					</button>
+  				</div>
+  				<div class="col-md-4">
+
+  					<button type="button" class="btn btn-default btn-block">
+              Saved Events
+  					</button>
+  				</div>
+  				<div class="col-md-4">
+
+  					<button type="button" class="btn btn-default btn-block">
+  						Personal Events
+  					</button>
+  				</div>
+  			</div>
+  			<div class="row">
+          <!-- LEFT FORM SIDE -->
+  				<div class="col-md-6">
+  					<form role="form">
+
+
+  							<input type="text" class="form-control" ng-model='vm.newEvent.eventName'/>
+
+
+              <div class="form-group">
+  							<label for="eventDate">
+  								Event Date:
+  							</label>
+  							<input type="datepicker" class="form-control" ng-model='vm.newEvent.date' id="eventDate" />
+  						</div>
+
+          </form>
+  				</div>
+
+          <!-- RIGHT FORM SIDE -->
+  				<div class="col-md-6">
+  					<form role="form">
+  						<div class="form-group">
+
+  							<label for="exampleInputEmail1">
+  								Event Details:
+  							</label>
+  							<textarea type="text" class="form-control" ng-model='vm.newEvent.textBody' ></textarea>
+  						</div>
+
+  						<div class="form-group">
+  							<label for="exampleInputFile">
+  								File Upload
+  							</label>
+  							<input type="file" ng-model='vm.newEvent.pic' />
+  							<p class="help-block">
+  								Photos or PDF file here.
+  							</p>
+  						</div>
+  						<div class="checkbox">
+
+  							<label>
+  								<input type="checkbox" /> Check me out
+  							</label>
+  						</div>
+  						<button style="margin-right:20px;" ng-click='vm.addNewEvent()' class="btn btn-default">
+  							Submit
+  						</button>
+              <button type="button" ng-click='vm.canEveAdd()' class="btn btn-default">
+  							Cancel
+  						</button>
+  					</form>
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+  </div>
+
+
+
+
+
+
+
+
+
+</div> <!-- End of controller -->

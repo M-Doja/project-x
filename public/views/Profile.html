@@ -2,6 +2,7 @@
 
 
 <div ng-controller='ProfileController as vm'>
+  <h1>WELCOME {{vm.status.username}}</h1>
   <div style="text-align:center;margin-bottom:15px;" >
   <button ui-sref="Upgrade" style="text-align:center;width:250px;margin-top:5px;"class="btn btn-xlg btn-info">Upgrade to Pro</button></div>
 
@@ -105,18 +106,8 @@
 			</ul>
 		</div>
 	</div>
-  </div> <!-- End of controller -->
 
-  <div ng-controller="CarouselDemoCtrl">
-    <div style="height: 305px">
-      <uib-carousel interval="myInterval" no-wrap="noWrapSlides">
-        <uib-slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}" style="margin:auto;">
-          <div class="carousel-caption">
-            <h4>Slide {{$index}}</h4>
-            <p>{{slide.text}}</p>
-          </div>
-        </uib-slide>
-      </uib-carousel>
-    </div>
-    
+
+
+
+</div> <!-- End of controller -->

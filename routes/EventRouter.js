@@ -24,6 +24,30 @@ router.param('id', function(req, res, next, id) {
     });
 });
 
+// ADDING A NEW EVENT
+router.post('/', function(req, res, next){
+  var event = new Event(req.body);
+  event.date = new Date();
+  event.save(function(err, result) {
+    if(err) return next(err);
+    if(!result) return next(err);
+    res.send(result);
+  });
+});
+
+
+// SHOW ALL EVENTS
+router.get('/', function(req, res, next) {
+  Event.find({})
+    .populate('Event', 'plannerName')
+    .exec(function(err, result){
+      if(err) return next(err);
+      if(!result) return next(err);
+      res.send(result);
+    });
+  });
+
+
 
 
   module.exports = router;

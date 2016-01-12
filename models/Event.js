@@ -2,9 +2,10 @@ var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 
+
 var EventSchema = new mongoose.Schema ({
   plannerName: [{type: mongoose.Schema.Types.ObjectId, ref:'User'}],
-  eventName: {required: true, type: String},
+  eventName: String,
   date: Date,
   pic: String,
   time: String,
